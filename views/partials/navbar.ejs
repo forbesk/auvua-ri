@@ -1,0 +1,14 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><%= consts.title %></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <% consts.navlinks.forEach(function(link) { %>
+        <li><a href='<%= link.href %>'><%= link.name %></a></li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</nav>
