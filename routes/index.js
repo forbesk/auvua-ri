@@ -16,7 +16,27 @@ var consts = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {consts: consts});
+  res.render('index', {
+    consts: consts,
+    navblocks: [
+      { name: 'Dashboard',
+        href: '/dash',
+        icon: 'glyphicon-send',
+        description: 'Control the vehicle, view camera streams and telemetry, and run missions' },
+      { name: 'Planner',
+        href: '/plan',
+        icon: 'glyphicon-random',
+        description: 'Design and edit tasks and missions' },
+      { name: 'Filters',
+        href: '/filter',
+        icon: 'glyphicon-eye-open',
+        description: 'Create, modify, and test vision filter chains' },
+      { name: 'Logging',
+        href: '/log',
+        icon: 'glyphicon-floppy-disk',
+        description: 'View log files and analyze telemetry, mission events, and footage' }
+    ]
+  });
 });
 
 router.get('/dash', function(req, res, next) {
